@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import express, { Application, Request, Response } from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
+const userRoutes = require('./routes/user');
 
 dotenv.config(); // Load environment variables
 
@@ -25,6 +26,8 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
+app.use('/api/user', userRoutes);
+
 
 // Routes
 app.get("/", (req: Request, res: Response): any => {
