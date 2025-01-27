@@ -4,10 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "npx nodemon src/app.ts",
-    "dev": "npx nodemon src/app.ts",
-    "build:ui": "@powershell Remove-Item -Recurse -Force dist && cd ../frontend && npm run build && @powershell Copy-Item -Recurse dist ../backend",
-    "lint": "eslint ."
+    "start": "node dist/app.js",
+    "dev": "nodemon src/app.ts"
   },
   "keywords": [],
   "author": "",
